@@ -1,5 +1,4 @@
-# Project Title
-KP Kustoms
+# KP Kustoms
 
 ## Overview
 <!-- What is your app? Brief description in a couple of sentences. -->
