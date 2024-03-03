@@ -11,13 +11,13 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
 ### User Profile
 <!-- Who will use your app? How will they use it? Any special considerations that your app must take into account. -->
 - Fashion lovers
-    - looking for unqiue pieces to elevate their closet
-    - 
+    - Looking for unqiue pieces to elevate their closet
+    - Want handmade crochet items
 
 - Gift shoppers
     - Looking to support small businesses
     - Who want to give a one of a kind gift
-    - 
+    - Want handmade items 
 
 ### Features
 <!-- List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented. -->
@@ -42,42 +42,43 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
     - react-router
     - axios
 
+    Square checkout. Checkout react plugin.
+
 ### APIs
 <!-- List any external sources of data that will be used in your app. -->
 I will create my own API to hold all of the product information.
 
 ### Sitemap
 <!-- List the pages of your app with brief descriptions. You can show this visually, or write it out. -->
-
 - Homepage
-- About the artist page
+- About the shop page
 - Custom order form
 - Shop products page
 - Individual product pages
 - Register page
 - Login page
 - Checkout page
+- Favourite page
 
 ### Mockups
-
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+<!-- Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches. -->
 
 ### Data
-
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
+<!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
 
 ### Endpoints
-
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+<!-- List endpoints that your server will implement, including HTTP methods, parameters, and example responses. -->
 
 ### Auth
+<!-- Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented. -->
 
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
 
 ## Roadmap
+<!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. -->
 
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
 ## Nice-to-haves
-
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+<!-- Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing. -->
+- Checkout process
+- Shipping calculation
+- Favourite pages
