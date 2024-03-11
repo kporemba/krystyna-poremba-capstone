@@ -97,13 +97,14 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
 
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
+![Breakdown of data](./assets/mockups/sql-diagram.png)
 
 ### Endpoints
 <!-- List endpoints that your server will implement, including HTTP methods, parameters, and example responses. -->
 
 ### Auth
 <!-- Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented. -->
-
+N/A
 
 ## Roadmap
 <!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. -->
