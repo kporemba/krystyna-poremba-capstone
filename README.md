@@ -104,7 +104,8 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
 
 **GET /products**
 
-- Get a product by id
+- Returns an array of product objects
+- Returns limited information, enough to display in shop all page
 
 Parameters:
 - id: product id as number
@@ -124,14 +125,13 @@ Response:
 
 ```
 
+**GET /products/:id**
 
-**GET /products/id**
-
-- Get a product by id
+- Returns a detailed object of a signle product
+- id must be swapped out with the id of a product as found in the list of products
 
 Parameters:
-- id: product id as number
-- 
+- id: product_id as number
 
 Response:
 ```
@@ -139,23 +139,118 @@ Response:
         "id": 1,
         "name": "Mushroom bag charms",
         "price": "$8.99",
-        "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+        "description": "Adorable bag charms. Perfect for carrying your chapstick or lighter, our bag charms are fashionable and functional",
+        "image_1": "http:/localhost:8080/images/mushroom_1.jpg",
+        "image_2": "http:/localhost:8080/images/mushroom_2.jpg",
+        "image_3": "http:/localhost:8080/images/mushroom_3.jpg",
+        "image_4": "http:/localhost:8080/images/mushroom_4.jpg"
     }
 
 ```
 
-**POST /custom_order**
+**POST /custom_order_form**
 
-- Upload a new custom order form
+- Creates an upload of a new custom order form
+
+Parameters:
+- id: product id as number to reference current product offerings to serve as a reference
 
 Response:
 ```
     {
-       
+        "id": 1,
+        "name": "Jan Doe",
+        "email": "janedoe@gmail.com",
+        "type": "sweater",
+        "description": "Hello! I am looking to have a custom sweater made in the flower power style.",
+        "size": "medium",
+        "product_list_id": 7,
+        "image": "colour_palette_ref.png"
     }
 
 ```
 
+**PUT /cart/:product_id**
+
+- Adds new items to cart
+
+Parameters:
+- id: product id as number
+- product_name as name
+- product_price as price
+- product_image_1 as product image
+
+Response:
+```
+    {
+        "id": 1,
+        "product_name": "Mushroom bag charms",
+        "product_price": "$8.99",
+        "quantity": 1,
+        "product_image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+    }
+
+```
+
+**DELETE /cart/:product_id**
+
+- Removes an item from cart
+
+Parameters:
+- id: product id as number
+
+Response:
+```
+    {
+        "id": 1,
+        "product_name": "Mushroom bag charms",
+        "product_price": "$8.99",
+        "quantity": 1,
+        "product_image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+    }
+
+```
+
+**PUT /wishlist/:product_id**
+
+- Adds a new item to wishlist
+
+Parameters:
+- id: product id as number
+- product_name as name
+- product_price as price
+- product_image_1 as product image
+
+Response:
+```
+    {
+        "id": 1,
+        "product_short_id": 1,
+        "product_name": "Mushroom bag charms",
+        "product_price": "$8.99",
+        "product_image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+    }
+
+```
+
+**DELETE /wishlist/:product_id**
+
+- Removes an item from wishlist
+
+Parameters:
+- id: product id as number
+
+Response:
+```
+    {
+        "id": 1,
+        "product_short_id": 1,
+        "product_name": "Mushroom bag charms",
+        "product_price": "$8.99",
+        "product_image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+    }
+
+```
 
 ### Auth
 <!-- Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented. -->
