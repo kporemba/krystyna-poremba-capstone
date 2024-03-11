@@ -23,45 +23,77 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
 <!-- List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented. -->
 - As a user, I want to be able to browse all products
 - As a user, I want to view a custom order request form
+- As a user, I want to send a custom order request form
 - As a user, I want to learn more about the artist creating these prodcts
+- As a user, I want to add products to my favourite list
+- As a user, I want to view my cart
+- As a user, I want to view the checkout process
 
-- As a user, I want to be able to create an account to make purchases 
-- As a user, I want to be able to login to my account to make purchases 
-
-- As a logged in user, I want to add products to my cart
-- As a logged in user, I want to checkout with the items in my cart
-- As a logged in user, I want to create a custom order request
 
 ## Implementation
 
 ### Tech Stack
 <!-- List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations. -->
 - React
+- MySQL
+- Express
 - Client libraries: 
     - react
     - react-router
     - axios
+    - react-popup
+    - react-animate-on-scroll
+- Server libraries:
+    - knex
+    - express
 
     Square checkout. Checkout react plugin.
 
 ### APIs
 <!-- List any external sources of data that will be used in your app. -->
-I will create my own API to hold all of the product information.
+- No external APIs will be used, I will be creating my own server
 
 ### Sitemap
 <!-- List the pages of your app with brief descriptions. You can show this visually, or write it out. -->
 - Homepage
-- About the shop page
-- Custom order form
 - Shop products page
 - Individual product pages
-- Register page
-- Login page
-- Checkout page
-- Favourite page
+- Custom order form
+- About the shop page
+- Wishlist page
+- FAQ
+- Cart
+- Contact
+
 
 ### Mockups
 <!-- Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches. -->
+#### Homepage
+![KP Kustoms homepage](./assets/mockups/homepage.jpg)
+
+#### Shop products page
+![Shop all products page](./assets/mockups/shop.jpg)
+
+#### Individual product pages
+![Shop a specific product page](./assets/mockups/single_product_page.jpg)
+
+#### Custom order form
+![Custom order page](./assets/mockups/custom_order.jpg)
+
+#### About the shop page
+![Learn more about KP Kustoms](./assets/mockups/about.jpg)
+
+#### Wishlist page
+![The page where all your favourited products appear](./assets/mockups/wishlist.jpg)
+
+#### FAQ
+![Frequently Asked Questions](./assets/mockups/faq.jpg)
+
+#### Cart
+![Shopping cart page](./assets/mockups/cart.jpg)
+
+#### Contact
+![Contact page](./assets/mockups/contact.jpg)
 
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
@@ -81,4 +113,4 @@ I will create my own API to hold all of the product information.
 <!-- Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing. -->
 - Checkout process
 - Shipping calculation
-- Favourite pages
+- Log in process
