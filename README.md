@@ -112,12 +112,15 @@ Parameters:
 
 Response:
 ```
+[
     {
         "id": 1,
         "name": "Mushroom bag charms",
         "price": "$8.99",
         "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
-}
+    },
+    ...
+]
 ```
 
 **GET /products/id**
@@ -130,15 +133,13 @@ Parameters:
 
 Response:
 ```
-[
     {
         "id": 1,
         "name": "Mushroom bag charms",
         "price": "$8.99",
         "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
     },
-    ...
-]
+
 ```
 
 **POST /custom_order**
