@@ -104,10 +104,10 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
 
 **GET /products**
 
-- Get products
+- Get a product by id
 
 Parameters:
-- 
+- id: product id as number
 - 
 
 Response:
@@ -119,9 +119,11 @@ Response:
         "price": "$8.99",
         "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
     },
-    ...
+...
 ]
+
 ```
+
 
 **GET /products/id**
 
@@ -138,13 +140,21 @@ Response:
         "name": "Mushroom bag charms",
         "price": "$8.99",
         "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
-    },
+    }
 
 ```
 
 **POST /custom_order**
 
 - Upload a new custom order form
+
+Response:
+```
+    {
+       
+    }
+
+```
 
 
 ### Auth
