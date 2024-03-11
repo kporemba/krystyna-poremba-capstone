@@ -102,6 +102,50 @@ KP Kustoms is designed t o fill the gap between professionalism and expensive fe
 ### Endpoints
 <!-- List endpoints that your server will implement, including HTTP methods, parameters, and example responses. -->
 
+**GET /products**
+
+- Get products
+
+Parameters:
+- 
+- 
+
+Response:
+```
+    {
+        "id": 1,
+        "name": "Mushroom bag charms",
+        "price": "$8.99",
+        "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+}
+```
+
+**GET /products/id**
+
+- Get a product by id
+
+Parameters:
+- id: product id as number
+- 
+
+Response:
+```
+[
+    {
+        "id": 1,
+        "name": "Mushroom bag charms",
+        "price": "$8.99",
+        "image_1": "http:/localhost:8080/images/mushroom_1.jpg"
+    },
+    ...
+]
+```
+
+**POST /custom_order**
+
+- Upload a new custom order form
+
+
 ### Auth
 <!-- Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented. -->
 N/A
