@@ -258,79 +258,79 @@ N/A
 ## Roadmap
 <!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. -->
 
-- [ ]Create client
-    - [ ]react project with routes and boilerplate pages
+- [ ] Create client
+    - [ ] react project with routes and boilerplate pages
 
-- [ ]Create Server
-    - [ ]xpress project with routing, with placeholder 200 responses
+- [ ] Create Server
+    - [ ] Express project with routing, with placeholder 200 responses
 
-- [ ]Create migrations
+- [ ] Create migrations
 
-- [ ]Gather 28 products 
-    - [ ]4 images
-    - [ ]names
-    - [ ]prices
-    - [ ]descriptions
+- [ ] Gather 28 products 
+    - [ ] 4 images
+    - [ ] names
+    - [ ] prices
+    - [ ] descriptions
 
-- [ ]Create seeds with product data
+- [ ] Create seeds with product data
 
-- [ ]Deploy client and server projects so all commits will be reflected in production
+- [ ] Deploy client and server projects so all commits will be reflected in production
 
-- [ ]Create main components
-    - [ ]Create header component
-    - [ ]Create footer component
-    - [ ]Create custom order banner
-    - [ ]Implement components on main app
+- [ ] Create main components
+    - [ ] Create header component
+    - [ ] Create footer component
+    - [ ] Create custom order banner
+    - [ ] Implement components on main app
 
-- [ ]Feature: Home page
-    - [ ]Create CTA
-    - [ ]Create GET /products/:id
+- [ ] Feature: Home page
+    - [ ] Create CTA
+    - [ ] Create GET /products/:id
 
-- [ ]Feature: Shop Products
-    - [ ]Create GET /products
-    - [ ]Create shop products banners
-    - [ ]Implement custom order banner
+- [ ] Feature: Shop Products
+    - [ ] Create GET /products
+    - [ ] Create shop products banners
+    - [ ] Implement custom order banner
 
-- [ ]Feature: Individual Product Page
-    - [ ]Implement GET /products/:id
-    - [ ]Implement PUT /cart/:product_id
-    - [ ]Implement shop related products banners
-    - [ ]Implement custom order banner
+- [ ] Feature: Individual Product Page
+    - [ ] Implement GET /products/:id
+    - [ ] Implement PUT /cart/:product_id
+    - [ ] Implement shop related products banners
+    - [ ] Implement custom order banner
 
-- [ ]Feature: Custom Order Form
-    - [ ]Implement custom order banner
-    - [ ]Create order form
-    - [ ]Create POST /custom_form_order
+- [ ] Feature: Custom Order Form
+    - [ ] Implement custom order banner
+    - [ ] Create order form
+    - [ ] Create POST /custom_form_order
 
-- [ ]Feature: About page
-    - [ ]Create header component
-    - [ ]Create image component
-    - [ ]Create quote component
+- [ ] Feature: About page
+    - [ ] Create header component
+    - [ ] Create image component
+    - [ ] Create quote component
 
-- [ ]Feature: Wishlist page
-    - [ ]Implement GET /product/:id
-    - [ ]Implement PUT /cart/:product_id
-    - [ ]Implement DELETE /wishlist/:product_id
-    - [ ]Implement custom order banner
-    - [ ]Implement shop suggested products banners
+- [ ] Feature: Wishlist page
+    - [ ] Implement GET /product/:id
+    - [ ] Implement PUT /cart/:product_id
+    - [ ] Implement DELETE /wishlist/:product_id
+    - [ ] Implement custom order banner
+    - [ ] Implement shop suggested products banners
 
-- [ ]Feature: FAQ page
-    - [ ]Create image component
-    - [ ]Create dropdown FAQ section
+- [ ] Feature: FAQ page
+    - [ ] Create image component
+    - [ ] Create dropdown FAQ section
 
-- [ ]Feature: Cart
-    - [ ]Implement GET /product/:product_id
-    - [ ]Implement DELETE /cart/:product_id
+- [ ] Feature: Cart
+    - [ ] Implement GET /product/:product_id
+    - [ ] Implement DELETE /cart/:product_id
 
-- [ ]Feature: Contact page
-    - [ ]Create image component
-    - [ ]Create contact info component
+- [ ] Feature: Contact page
+    - [ ] Create image component
+    - [ ] Create contact info component
 
-- [ ]Bug fixes
+- [ ] Bug fixes
 
-- [ ]DEMO DAY
+- [ ] DEMO DAY
 
-- [ ]Publish Site Live
+- [ ] Publish Site Live
 
 ## Nice-to-haves
 <!-- Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing. -->
