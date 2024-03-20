@@ -1,0 +1,67 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.about {
+  padding: 1rem;
+  color: $navy;
+  text-align: center;
+
+  &__subtitle {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $navy;
+  }
+
+  &__body-container {
+    @include tablet-desktop {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__hero-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  &__image-container {
+    @include tablet-desktop {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      justify-content: center;
+    }
+  }
+  &__image {
+    background-color: $red;
+    height: 10rem;
+    width: 10rem;
+    display: none;
+    @include tablet-desktop {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  color: $navy;
+  text-align: left;
+  &__container {
+    width: 50%;
+  }
+
+  &__item {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid $navy;
+
+    &--description {
+      height: 3rem;
+      @include fontRegular;
+    }
+  }
+}

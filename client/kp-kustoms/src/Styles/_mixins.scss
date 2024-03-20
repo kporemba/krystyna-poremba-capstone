@@ -1,85 +1,140 @@
-//breakpoints of different screensizes
-@mixin tablet {
-    @media (min-width: $tablet-breakpoint) and (max-width: 1279px) {
-        @content;
-    }
+@use "./variables" as *;
+
+// importing fonts
+@mixin fontLight {
+  @font-face {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    src: url(../assets/font/Poppins/Poppins-Light.ttf) format("truetype");
+    font-weight: 300;
+  }
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
-@mixin desktop {
-    @media (min-width: $desktop-breakpoint) {
-        @content;
-    }
+@mixin fontRegular {
+  @font-face {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    src: url(../assets/font/Poppins/Poppins-Regular.ttf) format("truetype");
+    font-weight: 400;
+  }
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
+
+@mixin fontSemiBold {
+  @font-face {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    src: url(../assets/font/Poppins/Poppins-SemiBold.ttf) format("truetype");
+    font-weight: 600;
+  }
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+@mixin fontBold {
+  @font-face {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    src: url(../assets/font/Poppins/Poppins-Bold.ttf) format("truetype");
+    font-weight: 700;
+  }
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+//breakpoints of different screensizes
+@mixin tablet-desktop {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+// @mixin desktop {
+//   @media (min-width: $desktop-breakpoint) {
+//     @content;
+//   }
+// }
 
 //text styling
 @mixin pageHeader {
+  @include fontBold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  @include tablet-desktop {
     @include fontBold;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+  }
 
-    @include tablet {
-        @include fontBold;
-        font-size: 2.125rem;
-        line-height: 2.75rem;
-    }
-
-    @include desktop {
-        @include fontBold;
-        font-size: 2.125rem;
-        line-height: 2.75rem;
-    }
+  // @include desktop {
+  //   @include fontBold;
+  //   font-size: 2.125rem;
+  //   line-height: 2.75rem;
+  // }
 }
 
 @mixin sectionHeader {
-    @include fontDemi;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+  @include fontSemiBold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+
+  @include tablet-desktop {
+    @include fontBold;
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  // @include desktop {
+  //   @include fontBold;
+  //   font-size: 1.75rem;
+  //   line-height: 2rem;
+  // }
 }
 
 @mixin subHeader {
-    @include fontDemi;
-    font-size: 0.813rem;
-    line-height: 1.125rem;
+  @include fontSemiBold;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
 
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-    }
+  @include tablet-desktop {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
 
-    @include desktop {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-    }
+  // @include desktop {
+  //   font-size: 1rem;
+  //   line-height: 1.375rem;
+  // }
 }
 
 @mixin bodyCopy {
-    @include fontRegular;
-    font-size: 0.813rem;
-    line-height: 1.125rem;
+  @include fontRegular;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
 
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
+  @include tablet-desktop {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 
-    @include desktop {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
+  // @include desktop {
+  //   font-size: 0.875rem;
+  //   line-height: 1.25rem;
+  // }
 }
 
 @mixin labelsButtons {
-    @include fontBold;
-    font-size: 0.625rem;
+  @include fontLight();
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+
+  @include tablet-desktop {
+    font-size: 1rem;
     line-height: 1.25rem;
+  }
 
-    @include tablet {
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-    }
-
-    @include desktop {
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-    }
+  // @include desktop {
+  //   font-size: 1rem;
+  //   line-height: 1.25rem;
+  // }
 }
