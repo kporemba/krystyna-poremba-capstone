@@ -7,7 +7,10 @@ function Contact() {
   return (
     <div className="contact">
       <div className="contact__container-left">
-        <div className="contact__image"></div>
+        <img
+          className="contact__image"
+          src="http://localhost:8080/images/contact.jpg"
+        />
       </div>
       <div className="contact__container-right">
         <h1 className="contact__title">Contact</h1>

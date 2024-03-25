@@ -6,16 +6,57 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: $yellow;
   color: $navy;
 
   @include tablet-desktop {
     flex-direction: row;
-    justify-content: space-evenly;
   }
   &__image {
     background-color: $orange;
-    // height: 15rem;
+    border-radius: 1rem;
     width: 15rem;
+  }
+  &__container-right {
+    width: auto;
+    display: block;
+    width: 50%;
+    padding: 1rem;
+  }
+
+  &__container-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    @include pageHeader;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    border-top: 1px solid $teal;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $teal;
+  }
+
+  &__subtitle {
+    display: flex;
+    color: $blue;
+    &--icon:hover {
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    color: $navy;
+    display: none;
   }
 }

@@ -3,9 +3,10 @@
 
 .footer {
   background-color: $navy;
+  position: fixed;
   padding: 1rem 0;
-  width: 100%;
   bottom: 0;
+  width: 100%;
 
   @include tablet-desktop {
     padding: 2rem 0;

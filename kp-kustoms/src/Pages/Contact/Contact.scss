@@ -10,7 +10,7 @@
 
   @include tablet-desktop {
     flex-direction: row;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
   }
 
   &__text {
@@ -19,6 +19,7 @@
 
   &__container-right {
     display: block;
+    padding: 1rem;
   }
 
   &__container-left {
@@ -28,13 +29,13 @@
 
   &__image {
     background-color: $orange;
-    height: 15rem;
     width: 15rem;
+    border-radius: 1rem;
   }
 
   &__icon {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     padding: 0.5rem;
 
     path {
