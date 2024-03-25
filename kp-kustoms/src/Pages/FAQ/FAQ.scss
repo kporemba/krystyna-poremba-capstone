@@ -1,0 +1,21 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.faq {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $yellow;
+  color: $navy;
+
+  @include tablet-desktop {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  &__image {
+    background-color: $orange;
+    // height: 15rem;
+    width: 15rem;
+  }
+}

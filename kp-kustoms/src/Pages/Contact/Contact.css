@@ -1,0 +1,39 @@
+.contact {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #112750;
+}
+@media (min-width: 768px) {
+  .contact {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.contact__text {
+  margin: 0;
+}
+.contact__container-right {
+  display: block;
+}
+.contact__container-left {
+  display: flex;
+  justify-content: center;
+}
+.contact__image {
+  background-color: #f46a39;
+  height: 15rem;
+  width: 15rem;
+}
+.contact__icon {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.5rem;
+}
+.contact__icon path {
+  fill: #008c9b;
+}
+.contact__icon path:hover {
+  fill: #027093;
+}/*# sourceMappingURL=Contact.css.map */

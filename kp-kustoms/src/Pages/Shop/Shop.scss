@@ -1,0 +1,20 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.shop {
+  padding: 1rem;
+
+  @include tablet-desktop {
+    padding: 1rem 2rem;
+  }
+
+  &__title {
+    color: $red;
+    @include pageHeader;
+  }
+
+  &__subtitle {
+    color: $orange;
+    @include subHeader;
+  }
+}

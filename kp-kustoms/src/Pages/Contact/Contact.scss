@@ -1,0 +1,47 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.contact {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $navy;
+
+  @include tablet-desktop {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__container-right {
+    display: block;
+  }
+
+  &__container-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    background-color: $orange;
+    height: 15rem;
+    width: 15rem;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+
+    path {
+      fill: $teal;
+    }
+    path:hover {
+      fill: $blue;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.homepage {
+  padding: 0 3rem 1rem 3rem;
+  &__title {
+    @include sectionHeader;
+    color: $red;
+    padding-top: 1rem;
+  }
+
+  &__customContainer {
+    margin-left: -3rem;
+    margin-right: -3rem;
+    margin-bottom: -1rem;
+  }
+  &__heroContainer {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
