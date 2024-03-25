@@ -1,0 +1,56 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.navbar1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  // position: fixed;
+
+  @include tablet-desktop {
+    padding: 0.5rem 5rem;
+  }
+
+  &__links {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // align-content: center;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  &__linkStyle {
+    text-decoration: none;
+  }
+  &__link {
+    color: $navy;
+    display: block;
+    @include labelsButtons;
+    padding: 0 0.25rem;
+
+    &--logo {
+      font-size: 1.5rem;
+      @include fontSemiBold;
+    }
+
+    @include tablet-desktop {
+      padding: 0 1rem;
+    }
+  }
+  &__link:hover {
+    color: $teal;
+    display: block;
+    @include labelsButtons;
+    padding: 0 0.25rem;
+
+    &--logo:hover {
+      font-size: 1.5rem;
+      @include fontSemiBold;
+    }
+
+    @include tablet-desktop {
+      padding: 0 1rem;
+    }
+  }
+}

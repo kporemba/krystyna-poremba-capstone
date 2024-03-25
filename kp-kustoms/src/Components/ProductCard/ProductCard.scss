@@ -1,0 +1,50 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.productCard {
+  padding: 1rem;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    background-color: $blue;
+    height: 10rem;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+
+    @include tablet-desktop {
+      display: flex;
+      background-color: $blue;
+      height: 12rem;
+      width: 12rem;
+      margin: 0;
+    }
+  }
+
+  &__name {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 1rem;
+    color: $red;
+    @include subHeader;
+
+    @include tablet-desktop {
+      display: block;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 1rem;
+    color: $orange;
+    @include bodyCopy;
+    @include tablet-desktop {
+      display: block;
+    }
+  }
+}

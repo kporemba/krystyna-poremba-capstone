@@ -1,0 +1,51 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.customBanner1 {
+  background-image: url(http://localhost:8080/images/custom-header.jpeg);
+  // filter: grayscale(100);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+
+  &__title {
+    @include sectionHeader;
+    background-color: $yellow;
+    display: flex;
+    color: $navy;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: $yellow;
+    border-radius: 0.5rem;
+  }
+  &__container:hover {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: $orange;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    @include subHeader;
+    font-weight: 300;
+    color: $navy;
+    display: flex;
+    margin: 0;
+  }
+  &__icon {
+    fill: $blue;
+  }
+}

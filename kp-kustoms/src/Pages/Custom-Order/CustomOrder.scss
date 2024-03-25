@@ -1,0 +1,78 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.customOrder {
+  padding: 1rem;
+  color: $navy;
+  text-align: center;
+
+  &__header {
+    height: auto;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+  &__title {
+    padding-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $navy;
+  }
+
+  &__body-container {
+    @include tablet-desktop {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__hero-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  &__form-container {
+    @include tablet-desktop {
+      width: 50%;
+    }
+  }
+
+  &__image-container {
+    display: none;
+    @include tablet-desktop {
+      background-image: url(http://localhost:8080/images/custom-single.jpeg);
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 10rem;
+      object-fit: cover;
+      justify-content: center;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  color: $navy;
+  text-align: left;
+  &__container {
+    width: 50%;
+  }
+
+  &__item {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid $navy;
+
+    &--description {
+      height: 3rem;
+      @include fontRegular;
+    }
+  }
+}
