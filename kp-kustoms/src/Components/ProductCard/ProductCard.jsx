@@ -6,7 +6,9 @@ const ProductCard = ({ product }) => {
     <div className="productCard">
       <img className="productCard__image" src={product?.primary_image} />
       <h3 className="productCard__name">{product?.product_name}</h3>
-      <h4 className="productCard__price">{product?.price}</h4>
+      <div className="productCard__group">
+        <h4 className="productCard__price">{product?.price}</h4>
+      </div>
     </div>
   );
 };

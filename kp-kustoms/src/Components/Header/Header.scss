@@ -13,9 +13,6 @@
 
   &__links {
     display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // align-content: center;
     padding-left: 0;
     margin: 0;
   }
@@ -52,5 +49,16 @@
     @include tablet-desktop {
       padding: 0 1rem;
     }
+  }
+  &__button-heart {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $navy;
+  }
+  &__button-heart:hover {
+    height: 2rem;
+    width: 2rem;
+    fill: $red;
+    cursor: pointer;
   }
 }

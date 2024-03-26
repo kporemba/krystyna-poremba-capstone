@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import React from "react";
-// import heart from "../../assets/icons/heart.svg";
-// import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
 import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 
 function Product({ product: productProps }) {
@@ -35,7 +33,7 @@ function Product({ product: productProps }) {
   if (!product) {
     return <div>Loading...</div>;
   }
-
+  localStorage.setItem("Color", "Red");
   return (
     <div className="product">
       <div className="product__container">

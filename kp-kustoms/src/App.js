@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact/Contact";
 import FAQ from "./Pages/FAQ/FAQ";
 import Shop from "./Pages/Shop/Shop";
 import Product from "./Pages/Product/Product";
+import Wishlist from "./Pages/Wishlist/Wishlist";
 
 function KpKustoms() {
   return (
@@ -23,6 +24,7 @@ function KpKustoms() {
           <Route path="/Custom-Order" element={<CustomOrder />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/FAQ" element={<FAQ />}></Route>
+          <Route path="/Wishlist" element={<Wishlist />}></Route>
           <Route path="/*" element={<Home />} />
         </Routes>
         <Footer />

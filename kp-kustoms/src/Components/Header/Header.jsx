@@ -1,6 +1,7 @@
 import "./Header.scss";
 import React from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 
 function Header() {
   return (
@@ -17,6 +18,9 @@ function Header() {
         </Link>
         <Link to={"/About"} className="navbar1__linkStyle">
           <li className="navbar1__link">About</li>
+        </Link>
+        <Link to={"/Wishlist"} className="navbar1__linkStyle">
+          <Heart className="navbar__button-heart" />
         </Link>
       </ul>
     </nav>
