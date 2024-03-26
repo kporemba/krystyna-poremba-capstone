@@ -1,5 +1,4 @@
 import "./CustomOrder.scss";
-import Hero from "../../Components/Hero/Hero";
 
 function CustomOrder() {
   return (
@@ -17,7 +16,12 @@ function CustomOrder() {
           below with as much detail as possible.
         </p>
         <div className="customOrder__body-container">
-          <div className="customOrder__image-container"></div>
+          <div className="customOrder__image-container">
+            <img
+              className="customOrder__image"
+              src="http://localhost:8080/images/custom-single.jpeg"
+            />
+          </div>
           <div className="customOrder__form-container">
             <form className="form">
               {/* name */}

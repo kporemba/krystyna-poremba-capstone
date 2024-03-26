@@ -1,25 +1,19 @@
 import "./ProductWindow.scss";
 import ProductCard from "../ProductCard/ProductCard";
+import Product from "../../Pages/Product/Product";
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
-const ProductWindow = () => {
+const ProductWindow = ({ category }) => {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
   const baseUrl = "http://localhost:8080/";
+  const params = useParams();
 
-  const categoryArr = [
-    "Cardigans",
-    "Hats",
-    "Blankets",
-    "Sweaters",
-    "Accessories",
-    "Bags",
-    "Knit",
-  ];
-
+  //listing all products
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,25 +34,17 @@ const ProductWindow = () => {
     return <div>Loading...</div>;
   }
 
-  if (category === "Cardigan") {
-    return (
-      <div className="productWindow">
-        {products.slice(14, 16).map((product) => (
-          <div className="productWindow__container">
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
-    );
-  }
-
   return (
     <div className="productWindow">
-      {products.slice(0, 6).map((product) => (
-        <div className="productWindow__container">
-          <ProductCard product={product} />
-        </div>
-      ))}
+      {products
+        .filter((product) => product.category === category)
+        .map((product) => (
+          <div className="productWindow__container">
+            <Link to={`/Shop/${product.id}`} className="productWindow__link">
+              <ProductCard product={product} />
+            </Link>
+          </div>
+        ))}
     </div>
   );
 };

@@ -57,6 +57,10 @@
 
   &__text {
     color: $navy;
-    display: none;
+    display: block;
   }
+}
+
+.hide {
+  display: none;
 }

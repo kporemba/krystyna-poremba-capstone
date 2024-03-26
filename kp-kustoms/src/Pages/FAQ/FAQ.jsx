@@ -1,22 +1,15 @@
 import "./FAQ.scss";
+import { useState } from "react";
 
 function FAQ() {
-  function toggleVis() {
-    //get the element
-    var text = document.getElementById("text");
+  const defaultVisibillity = false;
+  const [visible, setVisible] = useState({});
 
-    //current value of display property
-    var displaySetting = text.style.display;
+  const isVisible = (id) => visible[id] || defaultVisibillity;
 
-    //toggle
-    if (displaySetting == "block") {
-      // text is visible, hide it
-      text.style.display = "none";
-    } else {
-      //text is hiddle, show it
-      text.style.display = "block";
-    }
-  }
+  const handleClick = (id) => () => {
+    setVisible({ ...visible, [id]: !isVisible(id) });
+  };
 
   return (
     <div className="faq">
@@ -33,13 +26,12 @@ function FAQ() {
             <h3 className="faq__subtitle">Materials</h3>
             <h3
               className="faq__subtitle faq__subtitle--icon"
-              onClick={toggleVis}
-              id="plusButton"
+              onClick={handleClick(1)}
             >
               +
             </h3>
           </div>
-          <p className="faq__text" id="text">
+          <p id={1} className={!isVisible(1) ? "hide" : "faq__text"}>
             KP Kustoms uses a varitey of materials. Ranging from wool to acrylic
             to cotton, each piece can be made in the material of your choice.
             Fill out a custom order form to change the default material.
@@ -50,13 +42,12 @@ function FAQ() {
             <h3 className="faq__subtitle">Care Instruction</h3>
             <h3
               className="faq__subtitle faq__subtitle--icon"
-              onClick={toggleVis}
-              id="plusButton"
+              onClick={handleClick(2)}
             >
               +
             </h3>
           </div>
-          <p className="faq__text" id="text">
+          <p id={2} className={!isVisible(2) ? "hide" : "faq__text"}>
             KP Kustoms uses a varitey of materials. Ranging from wool to acrylic
             to cotton, each piece can be made in the material of your choice.
             Fill out a custom order form to change the default material.
@@ -67,13 +58,12 @@ function FAQ() {
             <h3 className="faq__subtitle">Sizing</h3>
             <h3
               className="faq__subtitle faq__subtitle--icon"
-              onClick={toggleVis}
-              id="plusButton"
+              onClick={handleClick(3)}
             >
               +
             </h3>
           </div>
-          <p className="faq__text" id="text">
+          <p id={3} className={!isVisible(3) ? "hide" : "faq__text"}>
             KP Kustoms uses a varitey of materials. Ranging from wool to acrylic
             to cotton, each piece can be made in the material of your choice.
             Fill out a custom order form to change the default material.
@@ -84,13 +74,12 @@ function FAQ() {
             <h3 className="faq__subtitle">Made-to-order</h3>
             <h3
               className="faq__subtitle faq__subtitle--icon"
-              onClick={toggleVis}
-              id="plusButton"
+              onClick={handleClick(4)}
             >
               +
             </h3>
           </div>
-          <p className="faq__text" id="text">
+          <p id={4} className={!isVisible(4) ? "hide" : "faq__text"}>
             KP Kustoms runs a made-to-order business.
           </p>
         </div>
@@ -99,13 +88,12 @@ function FAQ() {
             <h3 className="faq__subtitle">Shipping</h3>
             <h3
               className="faq__subtitle faq__subtitle--icon"
-              onClick={toggleVis}
-              id="plusButton"
+              onClick={handleClick(5)}
             >
               +
             </h3>
           </div>
-          <p className="faq__text" id="text">
+          <p id={5} className={!isVisible(5) ? "hide" : "faq__text"}>
             Shipping is calculated at checkout. Orders over 100$ qualify for
             free shipping.
           </p>
@@ -115,13 +103,12 @@ function FAQ() {
             <h3 className="faq__subtitle">Returns</h3>
             <h3
               className="faq__subtitle faq__subtitle--icon"
-              onClick={toggleVis}
-              id="plusButton"
+              onClick={handleClick(6)}
             >
               +
             </h3>
           </div>
-          <p className="faq__text" id="text">
+          <p id={6} className={!isVisible(6) ? "hide" : "faq__text"}>
             KP Kustoms is unable to process returns at this time. All sales are
             final.
           </p>

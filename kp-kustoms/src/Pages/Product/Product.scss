@@ -1,0 +1,47 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.product {
+  padding: 1rem;
+  &__container {
+    display: flex;
+    padding: 1rem 0;
+  }
+
+  &__right {
+    padding: 0 1rem;
+  }
+
+  &__image {
+    background-color: $red;
+    height: 21rem;
+    width: 21rem;
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__side {
+    width: 7rem;
+    background-color: $teal;
+  }
+
+  &__side-image {
+    background-color: $orange;
+    border: 2px solid $blue;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+  }
+
+  &__title {
+    color: $red;
+  }
+  &__subtitle {
+    color: $red;
+  }
+  &__description {
+    color: $orange;
+  }
+}
