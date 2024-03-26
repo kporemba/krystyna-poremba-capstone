@@ -5,34 +5,55 @@
   padding: 1rem;
   &__container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 1rem 0;
+
+    @include tablet-desktop {
+      flex-direction: row;
+    }
   }
 
   &__right {
-    padding: 0 1rem;
+    padding: 0;
+    @include tablet-desktop {
+      padding-left: 2rem;
+    }
   }
 
   &__image {
     background-color: $red;
-    height: 21rem;
-    width: 21rem;
+    height: 12rem;
+    width: 12rem;
+    @include tablet-desktop {
+      height: 27rem;
+      width: 27rem;
+    }
   }
 
   &__left {
     display: flex;
+    justify-content: center;
   }
 
   &__side {
-    width: 7rem;
+    width: 4rem;
     background-color: $teal;
+    @include tablet-desktop {
+      width: 9rem;
+    }
   }
 
   &__side-image {
     background-color: $orange;
     border: 2px solid $blue;
-    width: 7rem;
-    height: 7rem;
+    width: 4rem;
+    height: 4rem;
     object-fit: cover;
+    @include tablet-desktop {
+      width: 9rem;
+      height: 9rem;
+    }
   }
 
   &__title {
@@ -43,5 +64,32 @@
   }
   &__description {
     color: $orange;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button-cart {
+    border-radius: 1rem;
+    background-color: transparent;
+    border: 2px solid $teal;
+    color: $teal;
+  }
+  &__button-cart:hover {
+    border-radius: 1rem;
+    background-color: $green;
+    color: $navy;
+  }
+  &__button-heart {
+    height: 2rem;
+    width: 2rem;
+    fill: $blue;
+  }
+  &__button-heart:hover {
+    height: 2rem;
+    width: 2rem;
+    fill: $red;
+    cursor: pointer;
   }
 }

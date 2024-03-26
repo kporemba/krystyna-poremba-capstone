@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import React from "react";
+// import heart from "../../assets/icons/heart.svg";
+// import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
+import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 
 function Product({ product: productProps }) {
   const [productState, setProductState] = useState(null);
@@ -53,6 +56,11 @@ function Product({ product: productProps }) {
           <p className="product__description">
             All products are made to order.
           </p>
+          <div className="product__buttons">
+            <button className="product__button-cart">Add to cart</button>
+
+            <Heart className="product__button-heart" />
+          </div>
         </div>
       </div>
       <div className="product__group">
