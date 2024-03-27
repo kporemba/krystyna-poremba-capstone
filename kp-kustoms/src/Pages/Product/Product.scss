@@ -3,7 +3,9 @@
 
 .product {
   padding: 1rem;
-  &__container {
+
+  //top section
+  &__top {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,39 +16,42 @@
     }
   }
 
-  &__right {
-    padding: 0;
-    @include tablet-desktop {
-      padding-left: 2rem;
-    }
+  //left side of page
+  &__left {
+    display: flex;
+    justify-content: center;
+    background-color: $peach;
+    padding: 1rem;
+    border-radius: 1rem;
   }
-
+  //main image
+  &__main {
+    object-fit: cover;
+  }
   &__image {
     background-color: $red;
     height: 12rem;
     width: 12rem;
+    border: 7px solid $red;
+    border-right: none;
     @include tablet-desktop {
       height: 27rem;
       width: 27rem;
     }
   }
-
-  &__left {
-    display: flex;
-    justify-content: center;
-  }
-
+  //sidebar
   &__side {
     width: 4rem;
-    background-color: $teal;
+    background-color: $orange;
     @include tablet-desktop {
       width: 9rem;
     }
   }
-
   &__side-image {
     background-color: $orange;
-    border: 2px solid $blue;
+    border: 7px solid $red;
+    border-top: 10px solid $red;
+    border-bottom: 10px solid $red;
     width: 4rem;
     height: 4rem;
     object-fit: cover;
@@ -56,8 +61,30 @@
     }
   }
 
+  //right side of page
+  &__right {
+    padding: 0;
+    @include tablet-desktop {
+      padding-left: 2rem;
+    }
+  }
   &__title {
     color: $red;
+    padding: 1rem 0;
+    @include pageHeader;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
   }
   &__subtitle {
     color: $red;
@@ -66,30 +93,38 @@
     color: $orange;
   }
 
-  &__button {
+  //buttons
+  &__buttons {
     display: flex;
-    justify-content: space-between;
   }
   &__button-cart {
     border-radius: 1rem;
     background-color: transparent;
     border: 2px solid $teal;
     color: $teal;
+    padding: 0 0.5rem;
   }
   &__button-cart:hover {
     border-radius: 1rem;
+    border: 2px solid $yellow;
     background-color: $green;
-    color: $navy;
+    color: $yellow;
   }
+
   &__button-heart {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     fill: $blue;
   }
   &__button-heart:hover {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     fill: $red;
     cursor: pointer;
+  }
+
+  //bottom
+  &__group {
+    padding-top: 1rem;
   }
 }

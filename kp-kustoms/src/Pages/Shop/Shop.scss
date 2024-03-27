@@ -10,11 +10,26 @@
 
   &__title {
     color: $red;
+    padding: 1rem 0;
     @include pageHeader;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
   }
 
   &__subtitle {
+    padding-top: 1rem;
     color: $orange;
-    @include subHeader;
+    @include sectionHeader;
   }
 }

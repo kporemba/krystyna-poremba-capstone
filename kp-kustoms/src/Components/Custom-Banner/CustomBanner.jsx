@@ -1,5 +1,6 @@
 import "./CustomBanner.scss";
 import arrowRight from "../../assets/icons/arrow-right.svg";
+import { Link } from "react-router-dom";
 
 function CustomBanner() {
   return (
@@ -11,8 +12,9 @@ function CustomBanner() {
           src={arrowRight}
           alt="Arrow pointing right"
         ></img>
-
-        <h4 className="customBanner1__subtitle">Inquire here</h4>
+        <Link to={`/Custom-Order`} className="productWindow__link">
+          <h4 className="customBanner1__subtitle">Inquire here</h4>
+        </Link>
       </div>
     </div>
   );

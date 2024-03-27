@@ -6,7 +6,7 @@ function About() {
       <div className="about__hero-container">
         <img
           className="about__header"
-          src="http://localhost:8080/images/about-header.jpg"
+          src="http://localhost:8080/images/about-header.jpeg"
         />
       </div>
       <div className="about__container">

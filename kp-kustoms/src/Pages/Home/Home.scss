@@ -3,8 +3,13 @@
 
 .homepage {
   padding: 0 3rem 1rem 3rem;
+  // margin-top: -4rem;
   &__title {
     @include sectionHeader;
+    color: $red;
+    padding-top: 1rem;
+  }
+  &__subtitle {
     color: $red;
     padding-top: 1rem;
   }

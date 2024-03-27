@@ -3,14 +3,36 @@
 
 .wishlist {
   padding: 1rem;
+  min-height: 20rem;
 
   &__title {
     @include pageHeader;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
   }
 
   &__group {
     display: flex;
+    padding-bottom: 1rem;
   }
+  &__group-card {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: 3px solid $peach;
+  }
+
   &__buttons {
     display: flex;
     justify-content: space-around;
@@ -21,6 +43,13 @@
     background-color: transparent;
     border: 2px solid $teal;
     color: $teal;
+    padding: 0.5rem;
+  }
+  &__cart:hover {
+    border-radius: 1rem;
+    background-color: $green;
+    border: 2px solid $yellow;
+    color: $yellow;
   }
 
   &__remove {
@@ -28,5 +57,12 @@
     background-color: transparent;
     border: 2px solid $teal;
     color: $teal;
+    padding: 0.5rem;
+  }
+  &__remove:hover {
+    border-radius: 1rem;
+    background-color: $red;
+    border: 2px solid $yellow;
+    color: $yellow;
   }
 }

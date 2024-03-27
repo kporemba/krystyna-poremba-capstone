@@ -17,6 +17,23 @@
     margin: 0;
   }
 
+  &__title {
+    @include pageHeader;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
+  }
+
   &__container-right {
     display: block;
     padding: 1rem;

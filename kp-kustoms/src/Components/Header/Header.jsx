@@ -2,6 +2,7 @@ import "./Header.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
+import { ReactComponent as Cart } from "../../assets/icons/cart.svg";
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
           <li className="navbar1__link">Shop</li>
         </Link>
         <Link to={"/"} className="navbar1__linkStyle">
-          <li className="navbar1__link navbar1__link--logo">KP Kustoms</li>
+          <li className="navbar1__link-logo">KP Kustoms</li>
         </Link>
         <Link to={"/Custom-Order"} className="navbar1__linkStyle">
           <li className="navbar1__link">Custom Order</li>
@@ -21,6 +22,9 @@ function Header() {
         </Link>
         <Link to={"/Wishlist"} className="navbar1__linkStyle">
           <Heart className="navbar__button-heart" />
+        </Link>
+        <Link to={"/Cart"} className="navbar1__linkStyle--icon">
+          <Cart className="navbar__button-heart" />
         </Link>
       </ul>
     </nav>

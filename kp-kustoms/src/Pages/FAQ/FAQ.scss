@@ -30,13 +30,25 @@
 
   &__title {
     @include pageHeader;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
   }
 
   &__group {
     display: flex;
     flex-direction: column;
     width: auto;
-    border-top: 1px solid $teal;
   }
 
   &__top {

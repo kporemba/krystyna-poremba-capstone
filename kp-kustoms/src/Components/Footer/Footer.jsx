@@ -15,7 +15,7 @@ function Footer() {
           <li className="footer__link">FAQ</li>
         </Link>
         <Link to={"/"} className="footer__linkStyle">
-          <li className="footer__link footer__link--logo">KP Kustoms</li>
+          <li className="footer__link-logo">KP Kustoms</li>
         </Link>
         <Link
           target="_blank"

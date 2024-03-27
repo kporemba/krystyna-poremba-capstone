@@ -5,8 +5,10 @@
   background-color: $navy;
   // position: fixed;
   padding: 1rem 0;
-  bottom: 0;
+  // bottom: 0;
   width: 100%;
+
+  margin-top: auto;
 
   @include tablet-desktop {
     padding: 2rem 0;
@@ -39,15 +41,6 @@
     display: block;
     @include labelsButtons;
     padding: 0 1rem;
-
-    &--logo {
-      font-size: 1.5rem;
-      @include fontSemiBold;
-      padding: 1rem;
-      @include tablet-desktop {
-        padding: 0;
-      }
-    }
   }
 
   &__link:hover {
@@ -55,15 +48,21 @@
     display: block;
     @include labelsButtons;
     padding: 0 1rem;
+  }
+  &__link-logo {
+    color: $yellow;
+    display: block;
+    padding: 0 0.25rem;
+    font-size: 1.5rem;
+    @include fontSemiBold;
+  }
 
-    &--logo {
-      font-size: 1.5rem;
-      @include fontSemiBold;
-      padding: 1rem;
-      @include tablet-desktop {
-        padding: 0;
-      }
-    }
+  &__link-logo:hover {
+    color: $orange;
+    display: block;
+    padding: 0 0.25rem;
+    font-size: 1.5rem;
+    @include fontSemiBold;
   }
 
   &__icon {

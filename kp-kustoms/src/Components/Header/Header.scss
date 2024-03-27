@@ -4,8 +4,20 @@
 .navbar1 {
   display: flex;
   justify-content: center;
-  align-content: center;
-  // position: fixed;
+  height: 4rem;
+  background: linear-gradient(
+      to left,
+      $red,
+      $orange,
+      $peach,
+      $yellow,
+      $green,
+      $teal,
+      $blue,
+      $navy
+    )
+    left bottom no-repeat;
+  background-size: 100% 5px;
 
   @include tablet-desktop {
     padding: 0.5rem 5rem;
@@ -15,6 +27,7 @@
     display: flex;
     padding-left: 0;
     margin: 0;
+    align-items: center;
   }
 
   &__linkStyle {
@@ -26,29 +39,36 @@
     @include labelsButtons;
     padding: 0 0.25rem;
 
-    &--logo {
-      font-size: 1.5rem;
-      @include fontSemiBold;
-    }
-
     @include tablet-desktop {
       padding: 0 1rem;
     }
   }
+
   &__link:hover {
     color: $teal;
     display: block;
     @include labelsButtons;
     padding: 0 0.25rem;
 
-    &--logo:hover {
-      font-size: 1.5rem;
-      @include fontSemiBold;
-    }
-
     @include tablet-desktop {
       padding: 0 1rem;
     }
+  }
+
+  &__link-logo {
+    color: $navy;
+    display: block;
+    padding: 0 0.25rem;
+    font-size: 1.5rem;
+    @include fontSemiBold;
+  }
+
+  &__link-logo:hover {
+    color: $teal;
+    display: block;
+    padding: 0 0.25rem;
+    font-size: 1.5rem;
+    @include fontSemiBold;
   }
   &__button-heart {
     height: 1.5rem;

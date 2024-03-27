@@ -9,7 +9,7 @@ function Contact() {
       <div className="contact__container-left">
         <img
           className="contact__image"
-          src="http://localhost:8080/images/contact.jpg"
+          src="http://localhost:8080/images/contact.jpeg"
         />
       </div>
       <div className="contact__container-right">

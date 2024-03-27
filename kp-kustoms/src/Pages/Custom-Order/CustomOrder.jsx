@@ -1,6 +1,27 @@
 import "./CustomOrder.scss";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 function CustomOrder() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("contact_service", "contact_form", form.current, {
+        publicKey: "22a7-m_mCCnwCbx7t",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div>
       <div className="customOrder">
@@ -23,7 +44,7 @@ function CustomOrder() {
             />
           </div>
           <div className="customOrder__form-container">
-            <form className="form">
+            <form className="form" ref={form} onSubmit={sendEmail}>
               {/* name */}
               <label htmlFor="fullName">Full Name</label>
               <input
@@ -94,6 +115,7 @@ function CustomOrder() {
                 className="form__item"
                 name="image"
               ></input>
+              <input type="submit" value="Send" />
             </form>
           </div>
         </div>

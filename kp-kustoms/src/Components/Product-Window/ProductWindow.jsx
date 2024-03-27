@@ -34,14 +34,15 @@ const ProductWindow = ({ category }) => {
     return <div>Loading...</div>;
   }
 
+  //adding items to wishlist
   function clickHandler(product) {
-    const wishlistArr = JSON.parse(localStorage.getItem("product")) || [];
+    const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
 
     if (!wishlistArr.includes(product.id)) {
       wishlistArr.push(product.id);
     }
 
-    localStorage.setItem("product", JSON.stringify(wishlistArr));
+    localStorage.setItem("wishlist", JSON.stringify(wishlistArr));
   }
 
   return (

@@ -19,7 +19,19 @@
 
   &__subtitle {
     padding-bottom: 1rem;
-    border-bottom: 1px solid $navy;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
   }
 
   &__body-container {

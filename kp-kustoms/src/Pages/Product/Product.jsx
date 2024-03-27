@@ -33,10 +33,32 @@ function Product({ product: productProps }) {
   if (!product) {
     return <div>Loading...</div>;
   }
-  localStorage.setItem("Color", "Red");
+
+  //adding item to wishlist
+  function clickHandler(product) {
+    const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    if (!wishlistArr.includes(product.id)) {
+      wishlistArr.push(product.id);
+    }
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlistArr));
+  }
+
+  //adding item to the cart
+  function cartHandler(product) {
+    const wishlistArr = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!wishlistArr.includes(product.id)) {
+      wishlistArr.push(product.id);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(wishlistArr));
+  }
+
   return (
     <div className="product">
-      <div className="product__container">
+      <div className="product__top">
         <div className="product__left">
           <div className="product__main">
             <img className="product__image" src={product.primary_image} />
@@ -55,12 +77,23 @@ function Product({ product: productProps }) {
             All products are made to order.
           </p>
           <div className="product__buttons">
-            <button className="product__button-cart">Add to cart</button>
+            <button
+              className="product__button-cart"
+              onClick={() => cartHandler(product)}
+            >
+              Add to cart
+            </button>
 
-            <Heart className="product__button-heart" />
+            <button
+              className="productWindow__button"
+              onClick={() => clickHandler(product)}
+            >
+              <Heart className="productCard__button-heart" />
+            </button>
           </div>
         </div>
       </div>
+      {/* bottom of the page */}
       <div className="product__group">
         <h2 className="product__subtitle">{product.category}</h2>
         <ProductWindow category={product.category} />

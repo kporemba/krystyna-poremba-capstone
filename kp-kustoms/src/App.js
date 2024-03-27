@@ -1,4 +1,7 @@
 import "./App.css";
+// import "./App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -10,6 +13,7 @@ import FAQ from "./Pages/FAQ/FAQ";
 import Shop from "./Pages/Shop/Shop";
 import Product from "./Pages/Product/Product";
 import Wishlist from "./Pages/Wishlist/Wishlist";
+import Cart from "./Pages/Cart/Cart";
 
 function KpKustoms() {
   return (
@@ -25,6 +29,7 @@ function KpKustoms() {
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/FAQ" element={<FAQ />}></Route>
           <Route path="/Wishlist" element={<Wishlist />}></Route>
+          <Route path="/Cart" element={<Cart />}></Route>
           <Route path="/*" element={<Home />} />
         </Routes>
         <Footer />
