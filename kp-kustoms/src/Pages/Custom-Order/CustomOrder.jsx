@@ -1,8 +1,38 @@
 import "./CustomOrder.scss";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function CustomOrder() {
+  const [productState, setProductState] = useState([]);
+  const [error, setError] = useState(null);
+  const baseUrl = "http://localhost:8080/";
+  //listing all products
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${baseUrl}inventory`);
+        setProductState(response.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  //category options
+  const categoryArr = [
+    "Cardigans",
+    "Hats",
+    "Blankets",
+    "Sweaters",
+    "Accessories",
+    "Bags",
+    "Knit",
+  ];
+
+  //email form on submission
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -15,9 +45,11 @@ function CustomOrder() {
       .then(
         () => {
           console.log("SUCCESS!");
+          return <h1>Success</h1>;
         },
         (error) => {
           console.log("FAILED...", error.text);
+          return <h1>FAILED... {error.text}</h1>;
         }
       );
   };
@@ -48,16 +80,18 @@ function CustomOrder() {
               {/* name */}
               <label htmlFor="fullName">Full Name</label>
               <input
+                required
                 type="text"
                 id="fullName"
                 className="form__item"
                 name="fullName"
-                placeholder="First name, last name"
+                placeholder="Jane Doe"
               ></input>
 
               {/* email */}
               <label htmlFor="email">Email</label>
               <input
+                required
                 type="text"
                 id="email"
                 className="form__item"
@@ -68,20 +102,23 @@ function CustomOrder() {
               {/* item type */}
               <label htmlFor="type">Item Type</label>
               <select
+                required
                 id="type"
                 className="form__item"
                 name="type"
                 placeholder=""
               >
-                <option>Accessory</option>
-                <option>Wearable</option>
-                <option>Blanket</option>
-                <option>Bag</option>
+                <option>Other</option>
+                {/* map of product types */}
+                {categoryArr.map((category) => (
+                  <option>{category}</option>
+                ))}
               </select>
 
               {/* Description */}
               <label htmlFor="description">Order Description</label>
               <textarea
+                required
                 id="description"
                 className="form__item form__item--description"
                 name="description"
@@ -91,6 +128,7 @@ function CustomOrder() {
               {/* Measurements */}
               <label htmlFor="measurements">Measurements</label>
               <textarea
+                required
                 id="measurements"
                 className="form__item form__item--description"
                 name="measurements"
@@ -101,21 +139,28 @@ function CustomOrder() {
               <label htmlFor="ref">Product References</label>
               <select id="ref" className="form__item" name="ref" placeholder="">
                 {/* map of available products */}
-                <option>Accessory</option>
-                <option>Wearable</option>
-                <option>Blanket</option>
-                <option>Bag</option>
+                {productState.map((product) => (
+                  <option>{product.product_name}</option>
+                ))}
+                <option>N/A</option>
               </select>
 
               {/* image upload */}
-              <label htmlFor="image">Image Reference</label>
+              <label htmlFor="image">
+                Image Reference <br />
+                <i>The file must be smaller than 50kb</i>
+              </label>
               <input
                 type="file"
                 id="image"
                 className="form__item"
                 name="image"
               ></input>
-              <input type="submit" value="Send" />
+              <input
+                type="submit"
+                value="Send Custom Order Form"
+                className="form__submit"
+              />
             </form>
           </div>
         </div>

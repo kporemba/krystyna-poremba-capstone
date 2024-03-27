@@ -89,4 +89,18 @@
       @include fontRegular;
     }
   }
+  &__submit {
+    background-color: transparent;
+    color: $navy;
+    border: 2px solid $navy;
+    border-radius: 1rem;
+    height: 3rem;
+  }
+  &__submit:hover {
+    background-color: $green;
+    border: 2px solid $navy;
+    color: $navy;
+    border-radius: 1rem;
+    height: 3rem;
+  }
 }
