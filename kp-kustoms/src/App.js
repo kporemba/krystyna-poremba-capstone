@@ -12,6 +12,8 @@ import Shop from "./Pages/Shop/Shop";
 import Product from "./Pages/Product/Product";
 import Wishlist from "./Pages/Wishlist/Wishlist";
 import Cart from "./Pages/Cart/Cart";
+import { loadStripe } from "@stripe/stripe-js";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function KpKustoms() {
   return (
@@ -28,6 +30,7 @@ function KpKustoms() {
           <Route path="/FAQ" element={<FAQ />}></Route>
           <Route path="/Wishlist" element={<Wishlist />}></Route>
           <Route path="/Cart" element={<Cart />}></Route>
+          <Route path="/Checkout" element={<Checkout />}></Route>
           <Route path="/*" element={<Home />} />
         </Routes>
         <Footer />

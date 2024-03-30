@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: row;
     color: $red;
+    border-bottom: 3px solid $peach;
   }
   &__subtitle {
     width: 15%;
@@ -47,7 +48,7 @@
   &__text-header {
     display: flex;
     flex-direction: row;
-    border-top: 1px solid $peach;
+    border-bottom: 1px solid $peach;
     padding: 1rem 0;
   }
 
@@ -87,8 +88,27 @@
     color: $teal;
   }
 
+  &__counter-button:disabled {
+    height: 2rem;
+    background-color: transparent;
+    border: 2px solid grey;
+    color: grey;
+  }
+
   &__counter-text {
     padding: 0 0.5rem;
     margin: 0;
+  }
+
+  &__subtitle-footer {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    color: $red;
+    justify-content: end;
+  }
+
+  &__subtitle-total {
+    width: 15%;
   }
 }

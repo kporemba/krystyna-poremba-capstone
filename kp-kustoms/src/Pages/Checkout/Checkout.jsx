@@ -1,21 +1,14 @@
-// "use client";
-// import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
-// import { submitPayment } from "../../actions/actions";
+import React from "react";
+import StripeCheckout from "./StripePayment";
 
-// export default function Checkout() {
-//   const appId = "sandbox-sq0idb-pqymT5z-zL4jVZK919sxMw";
-//   const locationId = "LW3MNVHRSAPBB";
+const Checkout = () => {
+  return (
+    <div className="font-mono text-white text-opacity-70 font-[700] text-opacity-90 h-screen flex justify-center items-center">
+      <div className="bg-white rounded-md p-12 bg-opacity-70">
+        <StripeCheckout />
+      </div>
+    </div>
+  );
+};
 
-//   return (
-//     <PaymentForm
-//       applicationId={appId}
-//       locationId={locationId}
-//       cardTokenizeResponseReceived={async (token) => {
-//         const result = await submitPayment(token.token);
-//         console.log(result);
-//       }}
-//     >
-//       <CreditCard />
-//     </PaymentForm>
-//   );
-// }
+export default Checkout;

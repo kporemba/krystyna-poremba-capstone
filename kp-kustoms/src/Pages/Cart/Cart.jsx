@@ -2,13 +2,14 @@ import "./Cart.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const [cartArr, setCartArr] = useState([]);
   const [productState, setProductState] = useState(null);
-  const [quantityTotal, setQuantityTotal] = useState(); //total price of a specific product
   const [error, setError] = useState(null);
   const baseUrl = "http://localhost:8080/";
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const [number, setNumber] = useState({});
 
@@ -37,6 +38,18 @@ function Cart() {
     fetchData();
   }, []);
 
+  //grand total
+  useEffect(() => {
+    const price = 0;
+
+    const newPrice = productState
+      ?.filter((product) => cartArr.includes(product.id))
+      .reduce((acc, curr) => acc + curr.price * number[curr.id], price);
+    setTotalPrice(newPrice);
+
+    localStorage.setItem("productTotalValue", JSON.stringify(newPrice));
+  }, [cartArr, number, productState]);
+
   //remove product from wishlist
   function removeHandler(id) {
     const products = localStorage.getItem("cart");
@@ -57,8 +70,12 @@ function Cart() {
 
   //quantity button
   const updateQuantity = (id, value) => {
+    if (number[id] === 1 && value === -1) {
+      return;
+    }
     setNumber({ ...number, [id]: number[id] + value });
   };
+
   return (
     <div className="cart">
       <h1 className="cart__title">Your Cart</h1>
@@ -89,6 +106,7 @@ function Cart() {
                   <button
                     className="cart__counter-button"
                     onClick={() => updateQuantity(product.id, -1)}
+                    disabled={number[product.id] === 1}
                   >
                     -
                   </button>
@@ -103,11 +121,20 @@ function Cart() {
               </td>
 
               <td className="cart__text">
-                {product.price * number[product.id]}
+                {(product.price * number[product.id]).toFixed(2)}
               </td>
             </tr>
           ))}
+        <tr className="cart__subtitle-footer">
+          <th className="cart__subtitle--first"></th>
+          <th className="cart__subtitle"></th>
+          <th className="cart__subtitle">Total:</th>
+          <th className="cart__subtitle">{totalPrice?.toFixed(2)}</th>
+        </tr>
       </table>
+      <Link to="/Checkout">
+        <button>Checkout</button>
+      </Link>
     </div>
   );
 }
