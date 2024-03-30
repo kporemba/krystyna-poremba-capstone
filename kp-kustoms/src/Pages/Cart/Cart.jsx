@@ -6,16 +6,22 @@ import React from "react";
 function Cart() {
   const [cartArr, setCartArr] = useState([]);
   const [productState, setProductState] = useState(null);
-  const [number, setNumber] = useState(1); //number of a specific product
-  // const [quantityTotal, setQuantityTotal] = useState(); //total price of a specific product
+  const [quantityTotal, setQuantityTotal] = useState(); //total price of a specific product
   const [error, setError] = useState(null);
   const baseUrl = "http://localhost:8080/";
+
+  const [number, setNumber] = useState({});
 
   //calling cart string from local storage
   useEffect(() => {
     const productStr = localStorage.getItem("cart");
     const productId = JSON.parse(productStr);
     setCartArr(productId);
+    const productMap = {};
+    productId.forEach((product) => {
+      productMap[product] = 1;
+    });
+    setNumber(productMap);
   }, []);
 
   //listing all products
@@ -51,16 +57,8 @@ function Cart() {
 
   //quantity button
   const updateQuantity = (id, value) => {
-    cartArr.map((product) => product.id === id) &&
-      setNumber((prevState) => prevState + value);
-    console.log(number, "|", cartArr, "|", id, "|", value);
+    setNumber({ ...number, [id]: number[id] + value });
   };
-
-  //removing product if quantity is 0
-  // if (updateQuantity === 0) {
-  //   removeHandler(product.id);
-  // }
-
   return (
     <div className="cart">
       <h1 className="cart__title">Your Cart</h1>
@@ -71,7 +69,6 @@ function Cart() {
           <th className="cart__subtitle">Quantity</th>
           <th className="cart__subtitle">Total</th>
         </tr>
-
         {productState
           .filter((product) => cartArr.includes(product.id))
           .map((product) => (
@@ -95,7 +92,7 @@ function Cart() {
                   >
                     -
                   </button>
-                  <p className="cart__counter-text">{number}</p>
+                  <p className="cart__counter-text">{number[product.id]}</p>
                   <button
                     className="cart__counter-button"
                     onClick={() => updateQuantity(product.id, 1)}
@@ -105,7 +102,9 @@ function Cart() {
                 </div>
               </td>
 
-              <td className="cart__text">{product.price * number}</td>
+              <td className="cart__text">
+                {product.price * number[product.id]}
+              </td>
             </tr>
           ))}
       </table>
