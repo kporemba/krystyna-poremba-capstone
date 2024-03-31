@@ -1,0 +1,67 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.contact {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $navy;
+  height: 33rem;
+
+  @include tablet-desktop {
+    flex-direction: row;
+  }
+
+  &__text {
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  &__title {
+    @include pageHeader;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
+  }
+
+  &__container-right {
+    display: block;
+    padding: 1rem;
+  }
+
+  &__container-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    background-color: $orange;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 1rem;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+
+    path {
+      fill: $teal;
+    }
+    path:hover {
+      fill: $blue;
+    }
+  }
+}

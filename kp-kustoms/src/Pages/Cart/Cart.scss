@@ -1,0 +1,140 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.cart {
+  padding: 1rem;
+  min-height: 100vh;
+
+  &__title {
+    @include pageHeader;
+    color: $red;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 3px solid $peach;
+  }
+
+  &__subtitle-header {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    color: $red;
+    border-bottom: 3px solid $peach;
+  }
+  &__subtitle {
+    width: 15%;
+    @include subHeader;
+    &--first {
+      width: 55%;
+    }
+  }
+
+  &__text-header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $peach;
+    padding: 1rem 0;
+  }
+
+  &__text {
+    width: 15%;
+    color: $orange;
+    &--first {
+      width: 55%;
+      color: $orange;
+      font-weight: 600;
+    }
+  }
+
+  &__remove {
+    margin-left: 1rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    border: 2px solid $teal;
+    color: $teal;
+    @include labelsButtons;
+  }
+  &__remove:hover {
+    border-radius: 1rem;
+    background-color: $red;
+    border: 2px solid $yellow;
+    color: $yellow;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+  }
+  &__counter-button {
+    height: 2rem;
+    background-color: transparent;
+    border: 2px solid $blue;
+    color: $teal;
+  }
+
+  &__counter-button:disabled {
+    height: 2rem;
+    background-color: transparent;
+    border: 2px solid grey;
+    color: grey;
+  }
+
+  &__counter-text {
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  &__subtitle-footer {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    color: $red;
+    justify-content: end;
+  }
+
+  &__subtitle-total {
+    width: 15%;
+  }
+
+  &__checkout-box {
+    display: flex;
+    justify-content: end;
+    margin-right: 3.5rem;
+  }
+
+  &__checkout-link {
+    text-decoration: none;
+  }
+
+  &__checkout {
+    margin-top: 1rem;
+    background-color: $yellow;
+    border-radius: 1rem;
+    border: 2px solid $red;
+    color: $red;
+    padding: 0.5rem;
+  }
+  &__checkout:hover {
+    background-color: $red;
+    border-radius: 1rem;
+    border: 2px solid $yellow;
+    color: $yellow;
+    padding: 0.5rem;
+  }
+}

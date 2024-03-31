@@ -1,0 +1,70 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.checkoutForm {
+  color: $navy;
+  padding: 1rem 0;
+  @include pageHeader;
+  background: linear-gradient(
+      to left,
+      $red,
+      $orange,
+      $peach,
+      $yellow,
+      $green,
+      $teal,
+      $blue,
+      $navy
+    )
+    left bottom no-repeat;
+  background-size: 100% 5px;
+
+  &__subtitle {
+    @include sectionHeader;
+    color: $red;
+    margin-bottom: 0;
+    border-bottom: 1px solid $red;
+  }
+
+  &__group {
+    @include bodyCopy;
+    display: flex;
+  }
+  &__text {
+    font-weight: 600;
+    margin: 0.5rem;
+    &--total {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $red;
+    }
+  }
+  &__data {
+    margin: 0.5rem 0;
+  }
+
+  &__button {
+    @include labelsButtons;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid $navy;
+    color: $navy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+
+    @include tablet-desktop {
+      width: 7rem;
+    }
+  }
+
+  &__button:hover {
+    @include labelsButtons;
+    border-radius: 0.5rem;
+    background-color: $yellow;
+    border: 2px solid $navy;
+    color: $navy;
+  }
+}

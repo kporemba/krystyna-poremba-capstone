@@ -1,0 +1,215 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.customOrder {
+  padding: 0 1rem 1rem 1rem;
+  color: $navy;
+  text-align: center;
+
+  &__header {
+    height: auto;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+  &__title {
+    padding-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    padding-bottom: 1rem;
+    background: linear-gradient(
+        to left,
+        $red,
+        $orange,
+        $peach,
+        $yellow,
+        $green,
+        $teal,
+        $blue,
+        $navy
+      )
+      left bottom no-repeat;
+    background-size: 100% 5px;
+  }
+
+  &__body-container {
+    @include tablet-desktop {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__hero-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  &__form-container {
+    @include tablet-desktop {
+      width: 50%;
+    }
+  }
+
+  &__image-container {
+    display: none;
+    @include tablet-desktop {
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      width: 40%;
+      object-fit: cover;
+      justify-content: center;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  color: $navy;
+  text-align: left;
+  &__container {
+    width: 50%;
+  }
+
+  &__item {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid $navy;
+  }
+
+  &__item-description {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid $navy;
+    height: 5rem;
+    @include fontRegular;
+  }
+
+  &__item--error {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid $red;
+    border-radius: 0.5rem;
+  }
+
+  &__submit {
+    background-color: $yellow;
+    color: $navy;
+    border: 2px solid $navy;
+    border-radius: 1rem;
+    height: 3rem;
+  }
+  &__submit:hover {
+    background-color: $green;
+    border: 2px solid $navy;
+    color: $navy;
+    border-radius: 1rem;
+    height: 3rem;
+  }
+}
+
+.error {
+  @include labelsButtons;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  &__icon {
+    display: flex;
+  }
+  &__text {
+    display: flex;
+    color: $red;
+    margin: 0;
+  }
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 25%;
+
+  @include tablet-desktop {
+    position: fixed;
+    // left: auto;
+    left: 25%;
+    top: 20%;
+  }
+
+  &__top {
+    width: 100%;
+    background-color: white;
+    color: $navy;
+    height: 20rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px 0 rgba(17, 39, 80, 0.2),
+      0 6px 20px 0 rgba(17, 39, 80, 0.19);
+
+    @include tablet-desktop {
+      width: 30rem;
+    }
+  }
+
+  &__title {
+    display: flex;
+  }
+  &__text {
+    display: flex;
+    @include subHeader;
+    padding-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  &__button {
+    background-color: $navy;
+    color: $yellow;
+    @include subHeader;
+    text-transform: uppercase;
+    border: none;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+
+    &--link {
+      text-decoration: none;
+    }
+  }
+
+  &__button:hover {
+    background-color: $yellow;
+    color: $navy;
+    @include subHeader;
+    text-transform: uppercase;
+    border: none;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+
+    &--link {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.footer {
+  background-color: $navy;
+  padding: 1rem 0;
+  width: 100%;
+
+  margin-top: auto;
+
+  @include tablet-desktop {
+    padding: 2rem 0;
+    width: 100%;
+    bottom: 0;
+  }
+
+  &__linkStyle {
+    text-decoration: none;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    @include tablet-desktop {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    color: $yellow;
+    display: block;
+    @include labelsButtons;
+    padding: 0 1rem;
+  }
+
+  &__link:hover {
+    color: $orange;
+    display: block;
+    @include labelsButtons;
+    padding: 0 1rem;
+    @include tablet-desktop {
+      padding: 0 1rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__link-logo {
+    display: block;
+    height: 2rem;
+    padding: 0 0.27rem;
+  }
+
+  &__link-logo:hover {
+    height: 2.3rem;
+    margin: 0;
+    margin: 0 0.27rem;
+  }
+
+  &__icon {
+    padding: 0.5rem 1rem;
+    width: 2rem;
+    path {
+      fill: $yellow;
+    }
+    @include tablet-desktop {
+      padding: 0 0.5rem;
+    }
+  }
+  &__icon:hover {
+    width: 2.3rem;
+    height: 1.5rem;
+    path {
+      fill: $orange;
+    }
+  }
+}

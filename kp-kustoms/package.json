@@ -1,0 +1,49 @@
+{
+  "name": "kp-kustoms",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "@stripe/react-stripe-js": "^2.6.2",
+    "@stripe/stripe-js": "^3.1.0",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-canvas-confetti": "^2.0.7",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.22.3",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "reactstrap": "^9.2.2",
+    "sass": "^1.72.0",
+    "stripe": "^14.23.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30"
+  }
+}

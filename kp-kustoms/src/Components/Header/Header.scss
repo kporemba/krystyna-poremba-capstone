@@ -1,0 +1,104 @@
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.navbar1 {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  background: linear-gradient(
+      to left,
+      $red,
+      $orange,
+      $peach,
+      $yellow,
+      $green,
+      $teal,
+      $blue,
+      $navy
+    )
+    left bottom no-repeat;
+  background-size: 100% 5px;
+
+  @include tablet-desktop {
+    padding: 0.5rem 5rem;
+  }
+
+  &__links {
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  &__linkStyle {
+    text-decoration: none;
+  }
+  &__link {
+    color: $navy;
+    display: block;
+    @include labelsButtons;
+    padding: 0 0.25rem;
+
+    @include tablet-desktop {
+      padding: 0 1rem;
+    }
+
+    &--cart {
+      display: flex;
+      position: relative;
+      color: $blue;
+      padding: 0;
+    }
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link:hover {
+    color: $teal;
+    display: block;
+    padding: 0 0.25rem;
+    @include labelsButtons;
+
+    @include tablet-desktop {
+      padding: 0 1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__link-logo {
+    display: block;
+    height: 2rem;
+    margin: 0 0.27rem;
+  }
+
+  &__link-logo:hover {
+    height: 2.3rem;
+    margin: 0;
+    margin: 0 0.27rem;
+  }
+  &__button-heart {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $navy;
+  }
+  &__button-heart:hover {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $red;
+    cursor: pointer;
+  }
+  &__button-cart {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $navy;
+  }
+  &__button-cart:hover {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $teal;
+    cursor: pointer;
+  }
+}
