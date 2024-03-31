@@ -4,7 +4,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Cart() {
+function Cart(props) {
   const [cartArr, setCartArr] = useState([]);
   const [productState, setProductState] = useState(null);
   const [error, setError] = useState(null);
@@ -57,6 +57,7 @@ function Cart() {
     const newProducts = productsId.filter((product) => product !== id);
 
     localStorage.setItem("cart", JSON.stringify(newProducts));
+    props.updateCartTotal(-1);
     setCartArr(newProducts);
   }
 
@@ -73,6 +74,7 @@ function Cart() {
     if (number[id] === 1 && value === -1) {
       return;
     }
+    props.updateCartTotal(value);
     setNumber({ ...number, [id]: number[id] + value });
   };
 
@@ -90,7 +92,6 @@ function Cart() {
           .filter((product) => cartArr.includes(product.id))
           .map((product) => (
             <tr className="cart__text-header" key={product.id}>
-              {/* <td className="cart__text--image">{product.primary_image} </td> */}
               <td className="cart__text--first">
                 {product.product_name}
                 <button

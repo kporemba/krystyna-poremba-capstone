@@ -44,6 +44,7 @@ export default function CheckoutForm() {
     });
   }, [stripe]);
 
+  //submit handler that redirects on payment success
   const handleSubmit = async (e) => {
     e.preventDefault();
 

@@ -1,18 +1,6 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
-.hero {
-  &__image {
-    // background-color: $yellow;
-    // height: 10rem;
-    // object-fit: cover;
-    // width: 100%;
-    @include tablet-desktop {
-      // height: 5rem;
-    }
-  }
-}
-
 .carousel {
   width: auto;
   overflow: hidden;

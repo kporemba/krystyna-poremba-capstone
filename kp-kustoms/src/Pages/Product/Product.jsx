@@ -8,7 +8,7 @@ import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 import { ReactComponent as BackArrow } from "../../assets/icons/back.svg";
 import { Link } from "react-router-dom";
 
-function Product({ product: productProps }) {
+function Product({ product: productProps, updateCartTotal }) {
   const [productState, setProductState] = useState(null);
   const [error, setError] = useState(null);
   const baseUrl = "http://localhost:8080/";
@@ -66,13 +66,14 @@ function Product({ product: productProps }) {
 
   //adding item to the cart
   function cartHandler(product) {
-    const wishlistArr = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartArr = JSON.parse(localStorage.getItem("cart")) || [];
 
-    if (!wishlistArr.includes(product.id)) {
-      wishlistArr.push(product.id);
+    if (!cartArr.includes(product.id)) {
+      cartArr.push(product.id);
     }
 
-    localStorage.setItem("cart", JSON.stringify(wishlistArr));
+    updateCartTotal(1);
+    localStorage.setItem("cart", JSON.stringify(cartArr));
   }
 
   //image toggle

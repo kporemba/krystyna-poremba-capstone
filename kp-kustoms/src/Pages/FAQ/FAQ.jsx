@@ -7,6 +7,7 @@ function FAQ() {
 
   const isVisible = (id) => visible[id] || defaultVisibillity;
 
+  //control dropdown
   const handleClick = (id) => () => {
     setVisible({ ...visible, [id]: !isVisible(id) });
   };

@@ -1,6 +1,5 @@
 import "./Header.scss";
 import React from "react";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 import { ReactComponent as Cart } from "../../assets/icons/cart.svg";

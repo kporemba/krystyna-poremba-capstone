@@ -48,12 +48,6 @@
   }
 }
 
-// @mixin desktop {
-//   @media (min-width: $desktop-breakpoint) {
-//     @content;
-//   }
-// }
-
 //text styling
 @mixin pageHeader {
   @include fontBold;
@@ -65,12 +59,6 @@
     font-size: 2.125rem;
     line-height: 2.75rem;
   }
-
-  // @include desktop {
-  //   @include fontBold;
-  //   font-size: 2.125rem;
-  //   line-height: 2.75rem;
-  // }
 }
 
 @mixin sectionHeader {
@@ -83,12 +71,6 @@
     font-size: 1.75rem;
     line-height: 2rem;
   }
-
-  // @include desktop {
-  //   @include fontBold;
-  //   font-size: 1.75rem;
-  //   line-height: 2rem;
-  // }
 }
 
 @mixin subHeader {
@@ -100,11 +82,6 @@
     font-size: 1rem;
     line-height: 1.375rem;
   }
-
-  // @include desktop {
-  //   font-size: 1rem;
-  //   line-height: 1.375rem;
-  // }
 }
 
 @mixin bodyCopy {
@@ -116,11 +93,6 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-
-  // @include desktop {
-  //   font-size: 0.875rem;
-  //   line-height: 1.25rem;
-  // }
 }
 
 @mixin labelsButtons {
@@ -132,9 +104,4 @@
     font-size: 1rem;
     line-height: 1.25rem;
   }
-
-  // @include desktop {
-  //   font-size: 1rem;
-  //   line-height: 1.25rem;
-  // }
 }

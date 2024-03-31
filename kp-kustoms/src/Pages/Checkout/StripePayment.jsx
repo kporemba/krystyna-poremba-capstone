@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 
+//stripe test key
 const stripePromise = loadStripe(
   "pk_test_51OzpmUDTuB4jIPUCBNrr8hZtMtwqOM5ywkvGs7QfU1ngdEcqrBO3EgmYAyAnv2Vd25RrfBtxhvpPbmvCjJmMYjzv00ExM1aTGR"
 );
@@ -11,6 +12,7 @@ export default function StripeCheckout() {
   const [clientSecret, setClientSecret] = useState("");
   const baseUrl = "http://localhost:8080/";
 
+  //api call to get payment details
   useEffect(() => {
     const amount = JSON.parse(localStorage.getItem("productTotalValue"));
 

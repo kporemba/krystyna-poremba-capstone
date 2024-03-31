@@ -19,12 +19,18 @@ import { useState, useEffect } from "react";
 function KpKustoms() {
   const [cartTotal, setCartTotal] = useState(0);
 
+  const cartStr = localStorage.getItem("cart");
+
   //calling cart total string from local storage
   useEffect(() => {
-    const cartStr = localStorage.getItem("cart");
     const cartNum = JSON.parse(cartStr);
     setCartTotal(cartNum.length);
   }, []);
+
+  //updating cart state
+  const updateCartTotal = (value) => {
+    setCartTotal(cartTotal + value);
+  };
 
   return (
     <div className="kp-kustoms">
@@ -33,13 +39,19 @@ function KpKustoms() {
         <Routes>
           <Route pathx="/" element={<Home />}></Route>
           <Route path="/Shop" element={<Shop />}></Route>
-          <Route path="/Shop/:id" element={<Product />}></Route>
+          <Route
+            path="/Shop/:id"
+            element={<Product updateCartTotal={updateCartTotal} />}
+          ></Route>
           <Route path="/About" element={<About />}></Route>
           <Route path="/Custom-Order" element={<CustomOrder />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/FAQ" element={<FAQ />}></Route>
           <Route path="/Wishlist" element={<Wishlist />}></Route>
-          <Route path="/Cart" element={<Cart />}></Route>
+          <Route
+            path="/Cart"
+            element={<Cart updateCartTotal={updateCartTotal} />}
+          ></Route>
           <Route path="/Checkout" element={<Checkout />}></Route>
           <Route path="/Hooray" element={<Hooray />}></Route>
           <Route path="/*" element={<Home />} />
