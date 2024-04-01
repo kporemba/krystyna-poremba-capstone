@@ -1,5 +1,3 @@
-# krystyna-poremba-capstone-api
-
 # KP Kustoms
 
 KP Kustoms is the one stop shop for purchasing handmade one of a kind crochet pieces.
