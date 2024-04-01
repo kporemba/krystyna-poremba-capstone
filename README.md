@@ -34,25 +34,11 @@ Follow the instructions below to run a local version of KP Kustoms. Ensure you h
 
 2. Create a new database in MySQL called kp_kustoms
 3. Install server dependencies:
-   Run npm install from inside the server directory
 
 ```bash
    $ npm install
 ```
-
-4. Run migrations
-
-```bash
-   $ npm run migrate
-```
-
-5. Run seeds
-
-```bash
-   $ npm run seed
-```
-
-6. Rename .env_sample to .env and change placeholder values with your own. \*Note: You must use port 8080 due to hardcoded variables needed in the checkout process
+4. Rename .env_sample to .env and change placeholder values with your own. \*Note: You must use port 8080 due to hardcoded variables needed in the checkout process
 
 ```js
    PORT=8080
@@ -60,6 +46,17 @@ Follow the instructions below to run a local version of KP Kustoms. Ensure you h
    DB_HOST=<HOST ADDRESS>
    DB_USER=<YOUR DB USERNAME>
    DB_PASSWORD=<YOUR DB PASSWORD>
+```
+5. Run migrations
+
+```bash
+   $ npm run migrate
+```
+
+6. Run seeds
+
+```bash
+   $ npm run seed
 ```
 
 7. Start the server:
