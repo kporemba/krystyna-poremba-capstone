@@ -2,8 +2,9 @@
 @use "../../Styles/variables" as *;
 
 .checkout {
-  padding: 2rem;
+  padding: 0 2rem;
   @include subHeader;
+  padding-bottom: 1rem;
 
   &__container {
     border-radius: 1rem;

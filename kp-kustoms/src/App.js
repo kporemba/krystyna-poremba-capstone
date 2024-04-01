@@ -47,7 +47,10 @@ function KpKustoms() {
           <Route path="/Custom-Order" element={<CustomOrder />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/FAQ" element={<FAQ />}></Route>
-          <Route path="/Wishlist" element={<Wishlist />}></Route>
+          <Route
+            path="/Wishlist"
+            element={<Wishlist updateCartTotal={updateCartTotal} />}
+          ></Route>
           <Route
             path="/Cart"
             element={<Cart updateCartTotal={updateCartTotal} />}

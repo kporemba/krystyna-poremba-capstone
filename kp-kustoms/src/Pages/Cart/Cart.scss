@@ -31,34 +31,98 @@
   }
 
   &__subtitle-header {
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: row;
-    color: $red;
-    border-bottom: 3px solid $peach;
-  }
-  &__subtitle {
-    width: 15%;
-    @include subHeader;
-    &--first {
-      width: 55%;
+    display: none;
+    @include tablet-desktop {
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: row;
+      color: $red;
+      border-bottom: 3px solid $peach;
     }
   }
 
-  &__text-header {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid $peach;
-    padding: 1rem 0;
+  &__subtitle {
+    width: 20%;
+    @include subHeader;
+    &--first {
+      width: 50%;
+    }
+    @include tablet-desktop {
+      width: 15%;
+      text-align: center;
+      @include subHeader;
+      &--first {
+        width: 55%;
+      }
+    }
   }
 
+  //new
+  &__mobile-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include tablet-desktop {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+  //new
+  &__mobile-group-bottom {
+    display: flex;
+    align-items: center;
+    @include tablet-desktop {
+      display: flex;
+      width: 45%;
+      justify-content: space-around;
+    }
+  }
+  &__text-header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $peach;
+    padding: 1rem 0;
+    @include tablet-desktop {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid $peach;
+      padding: 1rem 0;
+    }
+  }
+
+  //new
   &__text {
-    width: 15%;
+    width: 100%;
     color: $orange;
+    @include bodyCopy;
     &--first {
-      width: 55%;
+      @include bodyCopy;
+      width: 100%;
       color: $orange;
       font-weight: 600;
+    }
+    &--mobile {
+      font-weight: 600;
+    }
+
+    @include tablet-desktop {
+      width: 15%;
+      color: $orange;
+      &--first {
+        width: 55%;
+        color: $orange;
+        font-weight: 600;
+      }
+      &--mobile {
+        display: none; //new
+      }
     }
   }
 
@@ -80,6 +144,12 @@
   &__counter {
     display: flex;
     align-items: center;
+    padding: 0 1rem;
+    @include tablet-desktop {
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
   }
   &__counter-button {
     height: 2rem;

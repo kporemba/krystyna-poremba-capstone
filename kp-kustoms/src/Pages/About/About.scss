@@ -28,14 +28,25 @@
   }
 
   &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+
     &--tablet {
       display: none;
+    }
+    &--mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     @include tablet-desktop {
       display: flex;
       align-items: center;
       justify-content: space-around;
       padding: 1rem;
+      flex-direction: row;
 
       &--tablet {
         display: flex;
@@ -53,8 +64,10 @@
     object-fit: cover;
     width: 15.5rem;
     border: 5px solid $orange;
+    margin-bottom: 1rem;
     @include tablet-desktop {
       height: 20rem;
+      margin-bottom: 0;
     }
   }
 

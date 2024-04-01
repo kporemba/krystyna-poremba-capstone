@@ -2,7 +2,7 @@
 @use "../../Styles/variables" as *;
 
 .homepage {
-  padding: 0 3rem 1rem 3rem;
+  padding: 0 1rem 1rem 1rem;
   &__title {
     @include sectionHeader;
     color: $red;

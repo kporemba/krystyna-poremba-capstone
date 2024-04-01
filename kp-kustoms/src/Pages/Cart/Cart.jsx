@@ -92,38 +92,43 @@ function Cart(props) {
           .filter((product) => cartArr.includes(product.id))
           .map((product) => (
             <tr className="cart__text-header" key={product.id}>
-              <td className="cart__text--first">
-                {product.product_name}
-                <button
-                  className="cart__remove"
-                  onClick={() => removeHandler(product.id)}
-                >
-                  Remove
-                </button>
-              </td>
-              <td className="cart__text">{product.price}</td>
-              <td className="cart__text">
-                <div className="cart__counter">
+              <div className="cart__mobile-group">
+                <td className="cart__text--first">
+                  {product.product_name}
                   <button
-                    className="cart__counter-button"
-                    onClick={() => updateQuantity(product.id, -1)}
-                    disabled={number[product.id] === 1}
+                    className="cart__remove"
+                    onClick={() => removeHandler(product.id)}
                   >
-                    -
+                    Remove
                   </button>
-                  <p className="cart__counter-text">{number[product.id]}</p>
-                  <button
-                    className="cart__counter-button"
-                    onClick={() => updateQuantity(product.id, 1)}
-                  >
-                    +
-                  </button>
+                </td>
+                <div className="cart__mobile-group-bottom">
+                  <td className="cart__text cart__text--mobile">Price: </td>
+                  <td className="cart__text">{product.price}</td>
+                  <td className="cart__text">
+                    <div className="cart__counter">
+                      <button
+                        className="cart__counter-button"
+                        onClick={() => updateQuantity(product.id, -1)}
+                        disabled={number[product.id] === 1}
+                      >
+                        -
+                      </button>
+                      <p className="cart__counter-text">{number[product.id]}</p>
+                      <button
+                        className="cart__counter-button"
+                        onClick={() => updateQuantity(product.id, 1)}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </td>
+                  <td className="cart__text cart__text--mobile">Total: </td>
+                  <td className="cart__text">
+                    {(product.price * number[product.id]).toFixed(2)}
+                  </td>
                 </div>
-              </td>
-
-              <td className="cart__text">
-                {(product.price * number[product.id]).toFixed(2)}
-              </td>
+              </div>
             </tr>
           ))}
         <tr className="cart__subtitle-footer">

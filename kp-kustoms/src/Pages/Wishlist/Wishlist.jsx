@@ -6,7 +6,7 @@ import React from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import CustomBanner from "../../Components/Custom-Banner/CustomBanner";
 
-function Wishlist() {
+function Wishlist(props) {
   const [wishlistArr, setWishlistArr] = useState([]);
   const [productState, setProductState] = useState(null);
   const [error, setError] = useState(null);
@@ -49,6 +49,19 @@ function Wishlist() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+
+  //adding item to the cart
+  function cartHandler(product) {
+    const cartArr = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!cartArr.includes(product.id)) {
+      cartArr.push(product.id);
+    }
+
+    props.updateCartTotal(1);
+    localStorage.setItem("cart", JSON.stringify(cartArr));
+  }
+
   return (
     <div className="wishlist">
       <h1 className="wishlist__title">Your Wishlist</h1>
@@ -61,7 +74,12 @@ function Wishlist() {
                 <ProductCard product={product} />
               </Link>
               <div className="wishlist__buttons">
-                <button className="wishlist__cart">Add to cart</button>
+                <button
+                  className="wishlist__cart"
+                  onClick={() => cartHandler(product)}
+                >
+                  Add to cart
+                </button>
                 <button
                   className="wishlist__remove"
                   onClick={() => removeHandler(product.id)}
