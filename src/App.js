@@ -24,7 +24,7 @@ function KpKustoms() {
   //calling cart total string from local storage
   useEffect(() => {
     const cartNum = JSON.parse(cartStr);
-    setCartTotal(cartNum.length);
+    setCartTotal(cartNum?.length);
   }, [cartStr]);
 
   //updating cart state
