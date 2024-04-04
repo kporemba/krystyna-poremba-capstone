@@ -10,6 +10,7 @@ function Contact() {
         <img
           className="contact__image"
           src="http://localhost:8080/images/contact.png"
+          alt="logo"
         />
       </div>
       <div className="contact__container-right">

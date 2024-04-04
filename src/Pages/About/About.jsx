@@ -7,6 +7,7 @@ function About() {
         <img
           className="about__header"
           src="http://localhost:8080/images/about-header.jpeg"
+          alt="Project in progress"
         />
       </div>
       <div className="about__container">
@@ -15,6 +16,7 @@ function About() {
             <img
               className="about__image"
               src="http://localhost:8080/images/about1.jpeg"
+              alt="blue hat"
             />
           </div>
           <div className="about__quote-container">
@@ -30,6 +32,7 @@ function About() {
             <img
               className="about__image"
               src="http://localhost:8080/images/about2.jpeg"
+              alt="granny square bucket hats"
             />
           </div>
           <div className="about__quote-container">
@@ -50,6 +53,7 @@ function About() {
             <img
               className="about__image"
               src="http://localhost:8080/images/about2.jpeg"
+              alt="granny square bucket hats"
             />
           </div>
         </div>
@@ -58,6 +62,7 @@ function About() {
             <img
               className="about__image"
               src="http://localhost:8080/images/about3.jpeg"
+              alt="baby blanket in progress"
             />
           </div>
           <div className="about__quote-container">
