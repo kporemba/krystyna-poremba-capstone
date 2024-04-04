@@ -31,7 +31,7 @@ export default function StripeCheckout() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [baseUrl]);
 
   const options = {
     clientSecret,

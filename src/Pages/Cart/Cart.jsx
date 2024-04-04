@@ -36,7 +36,7 @@ function Cart(props) {
       }
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   //grand total
   useEffect(() => {

@@ -25,7 +25,7 @@ function CustomOrder() {
       }
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   if (error) {
     return <div>Error: {error.message}</div>;

@@ -79,7 +79,7 @@ export default function CheckoutForm() {
       }
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   //calling total price from local storage
   useEffect(() => {

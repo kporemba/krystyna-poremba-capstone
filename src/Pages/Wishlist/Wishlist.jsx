@@ -30,7 +30,7 @@ function Wishlist(props) {
       }
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   //remove product from wishlist
   function removeHandler(id) {

@@ -44,7 +44,7 @@ function Product({ product: productProps, updateCartTotal }) {
       }
     };
     fetchData();
-  }, [id, productProps]);
+  }, [id, productProps, baseUrl]);
 
   if (!product) {
     return <div>Loading...</div>;
