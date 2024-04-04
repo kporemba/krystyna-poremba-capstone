@@ -8,7 +8,7 @@ function Cart(props) {
   const [cartArr, setCartArr] = useState([]);
   const [productState, setProductState] = useState(null);
   const [error, setError] = useState(null);
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
   const [totalPrice, setTotalPrice] = useState(0);
 
   const [number, setNumber] = useState({});

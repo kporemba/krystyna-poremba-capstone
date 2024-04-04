@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function Product({ product: productProps, updateCartTotal }) {
   const [productState, setProductState] = useState(null);
   const [error, setError] = useState(null);
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
   const params = useParams();
   const id = params.id;
   const product = productProps || productState; //use props if defined else use state

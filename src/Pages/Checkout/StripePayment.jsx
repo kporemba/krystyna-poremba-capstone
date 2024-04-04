@@ -10,7 +10,7 @@ const stripePromise = loadStripe(
 
 export default function StripeCheckout() {
   const [clientSecret, setClientSecret] = useState("");
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
 
   //api call to get payment details
   useEffect(() => {

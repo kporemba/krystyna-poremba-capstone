@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 function CustomOrder() {
   const [productState, setProductState] = useState([]);
   const [error, setError] = useState(null);
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
   const [errors, setErrors] = useState({}); //form validation
   const form = useRef();
   const [modalVisible, setModalVisible] = useState(false);

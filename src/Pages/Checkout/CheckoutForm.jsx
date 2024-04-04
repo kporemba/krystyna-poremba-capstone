@@ -16,7 +16,7 @@ export default function CheckoutForm() {
 
   const [cartArr, setCartArr] = useState([]);
   const [productState, setProductState] = useState([]);
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {

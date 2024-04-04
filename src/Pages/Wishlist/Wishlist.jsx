@@ -10,7 +10,7 @@ function Wishlist(props) {
   const [wishlistArr, setWishlistArr] = useState([]);
   const [productState, setProductState] = useState(null);
   const [error, setError] = useState(null);
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
 
   //calling wishlist string from local storage
   useEffect(() => {

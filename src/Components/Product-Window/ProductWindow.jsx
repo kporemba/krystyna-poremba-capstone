@@ -9,7 +9,7 @@ import { ReactComponent as Heart } from "../../assets/icons/heart.svg";
 const ProductWindow = ({ category }) => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = process.env.baseUrl || "http://localhost:8080";
 
   //listing all products
   useEffect(() => {
