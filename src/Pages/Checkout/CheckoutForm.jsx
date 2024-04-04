@@ -16,11 +16,8 @@ export default function CheckoutForm() {
 
   const [cartArr, setCartArr] = useState([]);
   const [productState, setProductState] = useState([]);
-  const [error, setError] = useState(null);
   const baseUrl = "http://localhost:8080/";
   const [totalPrice, setTotalPrice] = useState(0);
-
-  const [number, setNumber] = useState({});
 
   useEffect(() => {
     if (!stripe) {
@@ -78,7 +75,7 @@ export default function CheckoutForm() {
         const response = await axios.get(`${baseUrl}inventory`);
         setProductState(response.data);
       } catch (error) {
-        setError(error);
+        console.log(error);
       }
     };
     fetchData();
@@ -100,7 +97,6 @@ export default function CheckoutForm() {
     productId.forEach((product) => {
       productMap[product] = 1;
     });
-    setNumber(productMap);
   }, []);
 
   return (

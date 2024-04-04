@@ -25,7 +25,7 @@ function KpKustoms() {
   useEffect(() => {
     const cartNum = JSON.parse(cartStr);
     setCartTotal(cartNum.length);
-  });
+  }, [cartStr]);
 
   //updating cart state
   const updateCartTotal = (value) => {
