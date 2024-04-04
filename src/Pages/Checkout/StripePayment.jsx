@@ -28,9 +28,6 @@ export default function StripeCheckout() {
         return res.json();
       })
       .then((data) => setClientSecret(data.clientSecret))
-      .then(() => {
-        console.log(clientSecret);
-      })
       .catch((error) => {
         console.log(error);
       });
